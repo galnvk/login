@@ -9,6 +9,10 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
+#facebook
+gem 'omniauth'
+gem 'omniauth-facebook'
+
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
@@ -23,16 +27,8 @@ group :test do
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.1'
   
-  # Uncomment this line on OS X.
   gem 'growl', '1.0.3'
 
-  # Uncomment these lines on Linux.
-  # gem 'libnotify', '0.8.0'
-
-  # Uncomment these lines on Windows.
-  # gem 'rb-notifu', '0.0.4'
-  # gem 'win32console', '1.3.2'
-  # gem 'wdm', '0.1.0'
 end
 
 gem 'sass-rails', '4.0.1'

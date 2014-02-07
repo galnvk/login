@@ -29,6 +29,11 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def facebook_login
+    omniauth = request.env['omniauth.auth']   
+    redirect_to @user
+  end
+
   def update
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
