@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def facebook_login
-#    omniauth = request.env['omniauth.auth']   
+    omniauth = request.env['omniauth.auth']   
 #    if @user.save
 #      sign_in @user
 #      flash[:success] = "Welcome to our website!"
