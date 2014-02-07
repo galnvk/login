@@ -36,8 +36,9 @@ class UsersController < ApplicationController
 #      flash[:success] = "Welcome to our website!"
 #      redirect_to @user
 #    else
-      render 'new'
+#      render 'new'
 #    end
+    redirect_to(root_url)
   end
 
   def update
