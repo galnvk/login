@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def facebook_login
-   # render :text => omniauth = request.env['omniauth.auth'].to_yaml
+    omniauth = request.env['omniauth.auth']
     User.create!(name: "#{omniauth['info']['first_name']} #{omniauth['info']['last_name']}",
                          email: omniauth['info']['email'],
                          password: "",
