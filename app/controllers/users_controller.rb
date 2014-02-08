@@ -30,15 +30,13 @@ class UsersController < ApplicationController
   end
 
   def facebook_login
-    omniauth = request.env['omniauth.auth']   
-#    if @user.save
-#      sign_in @user
-#      flash[:success] = "Welcome to our website!"
-#      redirect_to @user
-#    else
-#      render 'new'
-#    end
-    redirect_to(root_url)
+    render :text => omniauth = request.env['omniauth.auth'].to_yaml
+   # User.create!(name: "#{omniauth['info']['first_name']} #{omniauth['info']['last_name']}",
+   #                      email: omniauth['info']['email'],
+   #                      password: "foobar",
+   #                      password_confirmation: "foobar")
+
+#    redirect_to(root_url)
   end
 
   def update
