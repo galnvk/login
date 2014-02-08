@@ -31,12 +31,19 @@ class UsersController < ApplicationController
 
   def facebook_login
     omniauth = request.env['omniauth.auth']
-    User.create!(name: "#{omniauth['info']['first_name']} #{omniauth['info']['last_name']}",
+    @user = User.find_by(email: omniauth['info']['email'])
+    if @user
+      sign_in @user
+      flash[:success] = "Welcome to our website!"
+      redirect_to @user
+    else
+      @user = User.new(name: omniauth['info']['name'],
                          email: omniauth['info']['email'],
                          password: "",
                          password_confirmation: "")
 
-#    redirect_to(root_url)
+      render 'new'
+    end
   end
 
   def update
