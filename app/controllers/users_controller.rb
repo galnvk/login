@@ -34,7 +34,6 @@ class UsersController < ApplicationController
     @user = User.find_by(email: omniauth['info']['email'])
     if @user
       sign_in @user
-      flash[:success] = "Welcome to our website!"
       redirect_to @user
     else
       @user = User.new(name: omniauth['info']['name'],
